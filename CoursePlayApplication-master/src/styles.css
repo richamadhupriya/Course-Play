@@ -5,28 +5,11 @@ body {
   font-weight: 200;
   font-size: 25px;
   background-color: azure;}
-  /*animation-name: example;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-fill-mode: backwards;
+  
+footer{
+  box-sizing:border-box;
+  background-color: #777;
+  color: white;
+  padding: 10px;
 }
-@keyframes example {
-  0% {
-    background-color:lightcyan;
-  }
-
-  25% {
-    background-color:lavenderblush;
-  }
-
-  50% {
-    background-color:lightsteelblue;
-    
-  }
-
-  100% {
-    background-color:linen;
-  }
-}*/
 
