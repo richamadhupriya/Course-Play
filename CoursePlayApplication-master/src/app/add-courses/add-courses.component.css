@@ -36,4 +36,10 @@ input.ng-valid.ng-touched
     position:center;
     top: -3px;
   }
+  a{
+    color:white;
+  }
+  span{
+    margin-left: 85%
+  }
 

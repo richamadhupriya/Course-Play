@@ -10,8 +10,9 @@ export class CourseService {
    courses: Course[] = [];
   constructor() { }
 
-  displayCourses() {
-    return of<Course[]>(this.courses);
+  displayCourses()
+   {
+    return of(this.courses);
   }
 
   addNewCourse(course: Course) {
