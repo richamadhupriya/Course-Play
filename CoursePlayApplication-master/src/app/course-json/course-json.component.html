@@ -1,0 +1,12 @@
+<div id="app" class="panel panel-primary">
+
+  <div class="panel-heading">
+    <b>Course Details</b>
+  </div>
+  <div class="panel-body">
+    <ul class="courses" *ngFor="let course of courses">
+      <li>{{course.courseName | lowercase }} &nbsp; &nbsp;{{course.coursePrice | currency:' INR ':code:'1.2-2'}}</li>
+    </ul>
+  </div>
+
+</div>

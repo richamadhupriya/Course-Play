@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  color: darkblue;
+  font-family: Gabriola;
+  font-weight: 200;
+  font-size: 25px;
+  background-color: azure;}
+  /*animation-name: example;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: backwards;
+}
+@keyframes example {
+  0% {
+    background-color:lightcyan;
+  }
+
+  25% {
+    background-color:lavenderblush;
+  }
+
+  50% {
+    background-color:lightsteelblue;
+    
+  }
+
+  100% {
+    background-color:linen;
+  }
+}*/
+

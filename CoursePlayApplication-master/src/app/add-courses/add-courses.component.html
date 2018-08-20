@@ -1,0 +1,123 @@
+<div class="tab-pane fade in active">
+  <div class="panel panel-primary" id="app">
+    <div class="panel-heading">
+      <b>Courses</b>
+    </div>
+    <div class="panel-body">
+      <ul class="courses">
+        <li *ngFor="let course of courses">
+          {{course.courseName}}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="panel panel-primary" id="app">
+    <div class="panel-heading">
+      <b>Add Course</b>
+    </div>
+    <div class="form-group panel-body">
+      <form [formGroup]="AddCoursesForm" (submit)="add($event)">
+        <table class="table">
+
+          <tr>
+            <td>
+              <label for="cName">Course Name</label>
+            </td>
+            <td>
+              <input type="text" name="cName" id="cName" formControlName="cName" [(ngModel)]='displayName' required />
+            </td>
+            <td>
+              <div *ngIf="AddCoursesForm.controls['cName'].touched && !AddCoursesForm.controls['cName'].valid">
+                <span *ngIf="AddCoursesForm.controls['cName'].hasError('required')">
+                  Course Name is Required!!
+                </span>
+                <span *ngIf="AddCoursesForm.controls['cName'].hasError('pattern')">
+                  Course name should be only alphanumeric
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="duration">Course duration</label>
+            </td>
+            <td>
+              <input type="text" name="duration" id="duration" formControlName="duration" [(ngModel)]='displayDuration' required
+              />
+            </td>
+            <td>
+              <div *ngIf="AddCoursesForm.controls['duration'].touched && !AddCoursesForm.controls['duration'].valid">
+                <span *ngIf="AddCoursesForm.controls['duration'].hasError('required')">
+                  Course Duration is Required!!
+                </span>
+                <span *ngIf="AddCoursesForm.controls['duration'].hasError('pattern')">
+                  Course duration should be numeric digits only
+                </span>
+
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="submit" value="ADD COURSE" class="btn btn-primary" [disabled]='!AddCoursesForm.valid' />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <div class="panel panel-primary" id="app">
+    <div class="panel-heading"><b>Find Duration</b></div>
+    <div class="form-group panel-body">
+      <form [formGroup]="SearchCoursesForm" (submit)="fetchDuration($event)">
+        <table class="table">
+
+          <tr>
+            <td>
+              <label for="serachName">Enter Course Name</label>
+            </td>
+            <td>
+              <input type="text" name="serachName" id="serachName" formControlName="serachName" required />
+            </td>
+
+            <td>
+              <input type="submit" value="GET DURATION" class="btn btn-primary" data-toggle="modal" data-traget="duration" [disabled]='!SearchCoursesForm.valid' />
+            </td>
+
+          </tr>
+          <tr>
+            <td>
+              <div *ngIf="SearchCoursesForm.controls['serachName'].touched && !SearchCoursesForm.controls['serachName'].valid">
+                <span *ngIf="SearchCoursesForm.controls['serachName'].hasError('required')">
+                  Course Name is Required!!
+                </span>
+                <span *ngIf="SearchCoursesForm.controls['serachName'].hasError('pattern')">
+                  Course name should be only alphanumeric
+                </span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="result" class="panel panel-primary" id="app">
+      <div class="panel-heading">
+        <b>Duration of course</b>
+      </div>
+      <div class="panel-body">
+          <span >
+              <strong>Duration = {{result}}</strong>
+            </span>
+      </div>
+  
+    </div>
+
+
+
+</div>
